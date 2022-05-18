@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+import "contact.proto";
+
+option java_package="com.tanmoy.ContactAddService.proto";
+
+service add{
+	rpc addContact(Contact) returns (ApiResponse);
+}
+
+message FindRequest {
+	int32 id = 1;
+}
+
+message ApiResponse {
+	string responseMessage = 1;
+	int32 responseCode = 2;
+	Contact contact = 3;
+}
